@@ -14,12 +14,12 @@ https://jupyter.org/install
 
 https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
-### Running Dockerfile/Execução do Dockerfile
+## Running Dockerfile/Execução do Dockerfile
 
 ```bash
 docker build .
 ```
-### Command to start the container with Jupyter/Comando para iniciar o container com o Jupyter:
+## Command to start the container with Jupyter/Comando para iniciar o container com o Jupyter:
 
 ```bash
 docker run -i -t -p 8888:8888 9a6672b5a5a2 /bin/bash -c "/opt/conda/bin/conda install jupyter -y --quiet && /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser --allow-root"
