@@ -14,12 +14,12 @@ https://jupyter.org/install
 
 https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
-## Build Dockerfile/Criação do Dockerfile
+## Build Image/Criar a Imagem
 
 ```bash
 docker build -t bootcamp .
 ```
-## Command to start the container with Jupyter/Comando para iniciar o container com o Jupyter:
+## Command to start the container with Jupyter/Pandas /Comando para iniciar o container com o Jupyter/Pandas:
 
 ```bash
 docker run -i -t -p 8888:8888 bootcamp /bin/bash -c "/opt/conda/bin/conda install jupyter pandas -y && /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks/ --ip='0.0.0.0' --port=8888 --no-browser --allow-root"
