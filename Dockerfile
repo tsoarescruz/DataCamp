@@ -24,21 +24,23 @@ RUN wget https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh -O ~/
     echo "conda activate base" >> ~/.bashrc
 
 
+# Install pandas and upgrade pip and pyzmq
+
 RUN pip install --upgrade pip
 RUN pip install pandas
 RUN pip install jupyter_contrib_nbextensions
 RUN pip install --upgrade --force-reinstall pyzmq
 
-# RUN conda update -n base conda -y
 
+# Mkdir app
+RUN mkdir -p /home/app/
+
+# Mkdir notebooks
 RUN mkdir /opt/notebooks/
 
 ADD . /opt/notebooks/
 
-# Mkdir
-RUN mkdir -p /home/app/
-
-# Workdir
+# Workdir notebooks
 WORKDIR /opt/notebooks/
 
 # Create user and group

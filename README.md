@@ -34,5 +34,5 @@ http://f4f5e4b9a0b1:8888/?token=7f61b6560d654775efc1fa44ad8d5d6f6096395c08ca56e1
 
 For/Para:
 ```bash
-http://localhost:8888/?token=7f61b6560d654775efc1fa44ad8d5d6f6096395c08ca56e1&token=7f61b6560d654775efc1fa44ad8d5d6f6096395c08ca56e1
+http://127.0.0.1:8888/?token=3d4e3c6f286b3e84efd38597a156dc1f035cfe11a9dc13f7
 ```
