@@ -14,15 +14,15 @@ https://jupyter.org/install
 
 https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
-## Running Dockerfile/Execução do Dockerfile
+## Build Dockerfile/Criação do Dockerfile
 
 ```bash
-docker build .
+docker build -t bootcamp .
 ```
 ## Command to start the container with Jupyter/Comando para iniciar o container com o Jupyter:
 
 ```bash
-docker run -i -t -p 8888:8888 9a6672b5a5a2 /bin/bash -c "/opt/conda/bin/conda install jupyter -y --quiet && /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser --allow-root"
+docker run -i -t -p 8888:8888 bootcamp /bin/bash -c "/opt/conda/bin/conda install jupyter pandas -y && /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks/ --ip='0.0.0.0' --port=8888 --no-browser --allow-root"
 ```
 
 Replace the address hash before port: 8888 by localhost/Substituir o hash do endereço antes da porta :8888 por localhost:
