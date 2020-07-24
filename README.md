@@ -32,7 +32,7 @@ sh build.sh
 docker run -i -t -p 8888:8888 datacamp /bin/bash -c "/opt/conda/bin/conda install jupyter pandas -y && /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks/ --ip='0.0.0.0' --port=8888 --no-browser --allow-root -v $PWD/notebooks/:/opt/notebooks/"
 ```
 
-or execute:
+or execute/ou execute:
 
 ```bash
 sh startup.sh
