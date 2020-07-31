@@ -3,8 +3,8 @@ FROM ubuntu:latest
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 ENV PATH /opt/conda/bin:$PATH
 
-RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificates \
-    libglib2.0-0 libxext6 libsm6 libxrender1 build-essential libssl-dev apt-utils curl 
+RUN apt-get update --fix-missing && apt-get install -y python3-pip wget bzip2 ca-certificates \
+    build-essential libssl-dev apt-utils curl 
 
 RUN apt-get install -y curl grep sed dpkg && \
     TINI_VERSION=`curl https://github.com/krallin/tini/releases/latest | grep -o "/v.*\"" | sed 's:^..\(.*\).$:\1:'` && \
@@ -21,13 +21,13 @@ RUN wget https://repo.anaconda.com/archive/Anaconda3-2020.07-Linux-x86_64.sh -O 
     echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
     echo "conda activate base" >> ~/.bashrc
 
-RUN pip install --upgrade pip && pip install pandas
-RUN pip install jupyter_contrib_nbextensions
-RUN pip install --upgrade --force-reinstall pyzmq
+RUN pip3 install --upgrade pip && pip install pandas
+RUN pip3 install jupyter_contrib_nbextensions
+RUN pip3 install --upgrade --force-reinstall pyzmq --use-feature=2020-resolver
 
 RUN mkdir /opt/notebooks/
 
-ADD . /opt/notebooks/
+ADD ./notebooks /opt/notebooks/
 
 # Mkdir
 RUN mkdir -p /home/app/
